@@ -39,7 +39,10 @@ from pyActionRecog.action_caffe import CaffeNet
 
 # build neccessary information
 print args.dataset
+
+# 将数据集中的数据与标签一一对应对应
 split_tp = parse_split_file(args.dataset)
+# 解析数据集，返回数据集中每段视频的具体信息， 此处的信息为： dir_dict, rgb_counts, flow_counts（具体每一段视频）
 f_info = parse_directory(args.frame_path,
                          args.rgb_prefix, args.flow_x_prefix, args.flow_y_prefix)
 
